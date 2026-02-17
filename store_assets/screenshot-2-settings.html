@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1280px;
+            height: 800px;
+            overflow: hidden;
+            background: #111;
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .settings-mockup {
+            width: 1100px;
+            height: 700px;
+            background: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 24px 30px 16px;
+        }
+
+        .header h1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            color: #e0e0e0;
+        }
+
+        .header h1 span {
+            color: #a0a0a0;
+            font-size: 20px;
+        }
+
+        .ver {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+            margin-left: 30px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 4px;
+            border-bottom: 1px solid #3a3a3a;
+            padding: 0 30px;
+        }
+
+        .nav-item {
+            padding: 8px 16px;
+            color: #a0a0a0;
+            font-size: 13px;
+            border-bottom: 2px solid transparent;
+            cursor: default;
+        }
+
+        .nav-item.active {
+            color: #42a5f5;
+            border-bottom-color: #42a5f5;
+        }
+
+        .content {
+            padding: 24px 30px;
+            flex: 1;
+        }
+
+        .content h2 {
+            font-size: 18px;
+            color: #e0e0e0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #3a3a3a;
+            margin-bottom: 20px;
+        }
+
+        .group {
+            margin-bottom: 20px;
+        }
+
+        .label {
+            font-size: 13px;
+            color: #e0e0e0;
+            margin-bottom: 6px;
+        }
+
+        .select {
+            width: 320px;
+            padding: 8px 12px;
+            background: #2d2d2d;
+            border: 1px solid #3a3a3a;
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 13px;
+        }
+
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #e0e0e0;
+        }
+
+        .toggle {
+            width: 36px;
+            height: 20px;
+            background: #42a5f5;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .toggle::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 18px;
+        }
+
+        .toggle.off {
+            background: #3a3a3a;
+        }
+
+        .toggle.off::after {
+            left: 2px;
+            background: #888;
+        }
+
+        .theme-sel {
+            display: flex;
+            gap: 12px;
+        }
+
+        .theme-opt {
+            padding: 8px;
+            border: 2px solid #3a3a3a;
+            border-radius: 8px;
+            text-align: center;
+            cursor: default;
+        }
+
+        .theme-opt.active {
+            border-color: #42a5f5;
+        }
+
+        .theme-prev {
+            width: 60px;
+            height: 40px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+        }
+
+        .theme-prev.dark {
+            background: linear-gradient(135deg, #1e1e1e, #333);
+        }
+
+        .theme-prev.light {
+            background: linear-gradient(135deg, #f0f0f0, #fff);
+        }
+
+        .theme-prev.sys {
+            background: linear-gradient(135deg, #1e1e1e 50%, #f0f0f0 50%);
+        }
+
+        .theme-label {
+            font-size: 12px;
+            color: #a0a0a0;
+        }
+
+        .theme-opt.active .theme-label {
+            color: #42a5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="settings-mockup">
+        <div class="header">
+            <h1><span>⚙</span> Settings</h1>
+            <div class="ver">Video DownloadHelper v1.0.0</div>
+        </div>
+        <div class="nav">
+            <div class="nav-item active">General</div>
+            <div class="nav-item">Appearance</div>
+            <div class="nav-item">Downloads</div>
+            <div class="nav-item">History</div>
+            <div class="nav-item">About</div>
+        </div>
+        <div class="content">
+            <h2>General</h2>
+            <div class="group">
+                <div class="label">Preferred video quality</div>
+                <div class="select">1080p (good default)</div>
+            </div>
+            <div class="group">
+                <div class="label">Default action</div>
+                <div class="select">Download</div>
+            </div>
+            <div class="group">
+                <div class="label">Filename template</div>
+                <div class="select" style="color:#666;">{title} ({resolution})</div>
+            </div>
+            <div class="group">
+                <div class="toggle-row">
+                    <div class="toggle"></div> Access commands from right-click in page
+                </div>
+            </div>
+            <div class="group">
+                <div class="toggle-row">
+                    <div class="toggle"></div> Show notification when download is complete
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

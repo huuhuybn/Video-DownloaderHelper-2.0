@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video DownloadHelper — Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+    <div class="settings-container">
+        <header class="settings-header">
+            <h1>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                </svg>
+                <span data-i18n="setting_button_tooltip">Settings</span>
+            </h1>
+            <p class="version-info">Video DownloadHelper v<span id="version">1.0.0</span></p>
+        </header>
+
+        <nav class="settings-nav">
+            <a href="#general" class="nav-item active" data-section="general" data-i18n="behavior_title">General</a>
+            <a href="#appearance" class="nav-item" data-section="appearance" data-i18n="appearance_title">Appearance</a>
+            <a href="#downloads" class="nav-item" data-section="downloads" data-i18n="download_title">Downloads</a>
+            <a href="#history" class="nav-item" data-section="history" data-i18n="settings_history_title">History</a>
+            <a href="#about" class="nav-item" data-section="about" data-i18n="version_title">About</a>
+        </nav>
+
+        <main class="settings-content">
+            <!-- General -->
+            <section class="setting-section active" id="section-general">
+                <h2 data-i18n="behavior_title">General</h2>
+
+                <div class="setting-group">
+                    <label class="setting-label" data-i18n="prefered_quality">Preferred video quality</label>
+                    <select id="set-quality" class="setting-select">
+                        <option value="highest" data-i18n="prefered_quality_highest">Highest</option>
+                        <option value="1080p" data-i18n="prefered_quality_1080p">1080p (good default)</option>
+                        <option value="720p" data-i18n="prefered_quality_720p">720p (fast download)</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Default action</label>
+                    <select id="set-default-action" class="setting-select">
+                        <option value="download">Download</option>
+                        <option value="copy-url">Copy URL</option>
+                        <option value="play">Play in browser</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Filename template</label>
+                    <input type="text" id="set-filename-template" class="setting-input"
+                        placeholder="{title} ({resolution})" value="">
+                    <p class="setting-hint">Placeholders: {title}, {domain}, {resolution}, {quality}, {date}, {time}</p>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-toggle">
+                        <input type="checkbox" id="set-context-menu" checked>
+                        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        <span data-i18n="show_in_context_menu">Access commands from right-click in page</span>
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-toggle">
+                        <input type="checkbox" id="set-notifications" checked>
+                        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        <span data-i18n="show_notification">Show notification when download is complete</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Appearance -->
+            <section class="setting-section" id="section-appearance">
+                <h2 data-i18n="appearance_title">Appearance</h2>
+
+                <div class="setting-group">
+                    <label class="setting-label" data-i18n="theme_title">Theme</label>
+                    <div class="theme-selector">
+                        <button class="theme-option active" data-theme="dark">
+                            <div class="theme-preview dark-preview"></div>
+                            <span data-i18n="theme_dark">Dark</span>
+                        </button>
+                        <button class="theme-option" data-theme="light">
+                            <div class="theme-preview light-preview"></div>
+                            <span data-i18n="theme_light">Light</span>
+                        </button>
+                        <button class="theme-option" data-theme="system">
+                            <div class="theme-preview system-preview"></div>
+                            <span data-i18n="theme_system">System</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label" data-i18n="popup_size_title">Window size</label>
+                    <div class="size-selector">
+                        <button class="size-option" data-size="small" data-i18n="popup_size_small">Small</button>
+                        <button class="size-option active" data-size="medium"
+                            data-i18n="popup_size_medium">Medium</button>
+                        <button class="size-option" data-size="big" data-i18n="popup_size_big">Big</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Downloads -->
+            <section class="setting-section" id="section-downloads">
+                <h2 data-i18n="download_title">Downloads</h2>
+
+                <div class="setting-group">
+                    <label class="setting-label" data-i18n="download_subdirectory">Download subdirectory</label>
+                    <input type="text" id="set-subdir" class="setting-input" placeholder="VDH Downloads">
+                    <p class="setting-hint" data-i18n="download_directory_description">
+                        Videos are downloaded in the default browser download directory.
+                    </p>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label" data-i18n="max_parallel_downloads">Max concurrent downloads</label>
+                    <select id="set-max-concurrent" class="setting-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Minimum file size</label>
+                    <select id="set-min-size" class="setting-select">
+                        <option value="0">No minimum</option>
+                        <option value="51200">50 KB</option>
+                        <option value="102400" selected>100 KB</option>
+                        <option value="524288">500 KB</option>
+                        <option value="1048576">1 MB</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- History -->
+            <section class="setting-section" id="section-history">
+                <h2 data-i18n="settings_history_title">History</h2>
+
+                <div class="setting-group">
+                    <label class="setting-toggle">
+                        <input type="checkbox" id="set-history-enabled">
+                        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        <span data-i18n="enable_history">Enable History</span>
+                    </label>
+                    <p class="setting-hint" data-i18n="history_warning_2">
+                        Everything stays on your machine. We value your privacy.
+                    </p>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label" data-i18n="history_limit">Forget download history after X days</label>
+                    <select id="set-history-days" class="setting-select">
+                        <option value="7">7 days</option>
+                        <option value="30" selected>30 days</option>
+                        <option value="90">90 days</option>
+                        <option value="365">1 year</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <button id="btn-clear-history" class="btn-danger" data-i18n="clear_history">Clear History</button>
+                </div>
+
+                <div id="history-list" class="history-list">
+                    <p class="history-empty" data-i18n="no_downloads_yet">No entries yet.</p>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section class="setting-section" id="section-about">
+                <h2 data-i18n="version_title">About</h2>
+                <div class="about-card">
+                    <div class="about-logo">
+                        <div class="logo-circles">
+                            <div class="circle c1"></div>
+                            <div class="circle c2"></div>
+                            <div class="circle c3"></div>
+                        </div>
+                    </div>
+                    <h3>Video DownloadHelper</h3>
+                    <p>Version <span id="about-version">1.0.0</span></p>
+                    <p class="about-desc">Download videos from the web. Detect and save video/audio streams from any
+                        website.</p>
+                    <div class="about-links">
+                        <a href="https://downloadhelper.net" target="_blank">Website</a>
+                        <a href="https://github.com/aclap-dev/video-downloadhelper" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <button id="btn-reset-settings" class="btn-secondary" data-i18n="reset_settings">Reset
+                        settings</button>
+                </div>
+
+                <div class="setting-group">
+                    <button id="btn-reload-addon" class="btn-secondary" data-i18n="restart_addon">Reload addon</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="settings.js" type="module"></script>
+</body>
+
+</html>

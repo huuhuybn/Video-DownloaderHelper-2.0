@@ -1,0 +1,140 @@
+{
+    "extName": {
+        "message": "Video DownloadHelper"
+    },
+    "extDescription": {
+        "message": "Download Videos from the Web."
+    },
+    "waiting_for_media": {
+        "message": "Waiting for media…"
+    },
+    "nomedia_description": {
+        "message": "Start the video (and skip ads if any) to help detect the media."
+    },
+    "nomedia_reload_button": {
+        "message": "Force detection"
+    },
+    "download_button": {
+        "message": "Download"
+    },
+    "copy_url": {
+        "message": "Copy URL"
+    },
+    "play": {
+        "message": "Play"
+    },
+    "details": {
+        "message": "Details"
+    },
+    "setting_button_tooltip": {
+        "message": "Settings"
+    },
+    "show_nomedia_button": {
+        "message": "No video?"
+    },
+    "history_button_tooltip": {
+        "message": "Show Download History"
+    },
+    "clear_downloaded_tooltip": {
+        "message": "Clear all"
+    },
+    "behavior_title": {
+        "message": "General"
+    },
+    "appearance_title": {
+        "message": "Appearance"
+    },
+    "download_title": {
+        "message": "Downloads"
+    },
+    "settings_history_title": {
+        "message": "History"
+    },
+    "version_title": {
+        "message": "About"
+    },
+    "prefered_quality": {
+        "message": "Preferred video quality"
+    },
+    "prefered_quality_highest": {
+        "message": "Highest (slow download, high resolution)"
+    },
+    "prefered_quality_1080p": {
+        "message": "1080p (good default)"
+    },
+    "prefered_quality_720p": {
+        "message": "720p (fast download, low resolution)"
+    },
+    "show_in_context_menu": {
+        "message": "Access commands from right-click in page"
+    },
+    "show_notification": {
+        "message": "Show notification when download is complete"
+    },
+    "theme_title": {
+        "message": "Theme"
+    },
+    "theme_dark": {
+        "message": "Dark"
+    },
+    "theme_light": {
+        "message": "Light"
+    },
+    "theme_system": {
+        "message": "System"
+    },
+    "popup_size_title": {
+        "message": "Window size"
+    },
+    "popup_size_small": {
+        "message": "Small"
+    },
+    "popup_size_medium": {
+        "message": "Medium"
+    },
+    "popup_size_big": {
+        "message": "Big"
+    },
+    "download_subdirectory": {
+        "message": "Download subdirectory"
+    },
+    "download_directory_description": {
+        "message": "Videos are downloaded in the default browser download directory."
+    },
+    "max_parallel_downloads": {
+        "message": "Max concurrent downloads"
+    },
+    "enable_history": {
+        "message": "Enable History"
+    },
+    "history_warning_2": {
+        "message": "Everything stays on your machine. We value your privacy."
+    },
+    "history_limit": {
+        "message": "Forget download history after X days"
+    },
+    "clear_history": {
+        "message": "Clear History"
+    },
+    "no_downloads_yet": {
+        "message": "No entries yet."
+    },
+    "reset_settings": {
+        "message": "Reset settings"
+    },
+    "restart_addon": {
+        "message": "Reload addon"
+    },
+    "download_failed": {
+        "message": "Download failed"
+    },
+    "download_interrupted": {
+        "message": "Download interrupted"
+    },
+    "no_youtube": {
+        "message": "Download from YouTube not allowed"
+    },
+    "no_youtube_description": {
+        "message": "Unfortunately, the Chrome Web Store does not allow extensions for downloading YouTube videos."
+    }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1280px;
+            height: 800px;
+            overflow: hidden;
+            background: #1a1a1a;
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .browser-mockup {
+            width: 1100px;
+            background: #2b2b2b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .browser-bar {
+            height: 36px;
+            background: #363636;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-r {
+            background: #ff5f57;
+        }
+
+        .dot-y {
+            background: #ffbd2e;
+        }
+
+        .dot-g {
+            background: #28c840;
+        }
+
+        .url-bar {
+            flex: 1;
+            height: 22px;
+            background: #1e1e1e;
+            border-radius: 4px;
+            margin-left: 12px;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            color: #888;
+            font-size: 11px;
+        }
+
+        .page-content {
+            height: 420px;
+            background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+            padding: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-text {
+            color: #555;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .popup {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            width: 400px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            border: 1px solid #333;
+        }
+
+        .popup-toolbar {
+            display: flex;
+            align-items: center;
+            padding: 6px 10px;
+            background: #252526;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .popup-title {
+            flex: 1;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tb {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 12px;
+        }
+
+        .empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 32px 16px;
+            text-align: center;
+        }
+
+        .empty-icon {
+            font-size: 40px;
+            color: #444;
+            margin-bottom: 12px;
+            opacity: 0.4;
+        }
+
+        .empty-title {
+            font-size: 15px;
+            color: #a0a0a0;
+            margin-bottom: 4px;
+        }
+
+        .empty-desc {
+            font-size: 11px;
+            color: #666;
+            max-width: 280px;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .empty-btn {
+            padding: 6px 16px;
+            border: 1px solid #3a3a3a;
+            border-radius: 6px;
+            background: transparent;
+            color: #a0a0a0;
+            font-size: 11px;
+        }
+
+        .popup-footer {
+            display: flex;
+            align-items: center;
+            padding: 6px 10px;
+            background: #252526;
+            border-top: 1px solid #3a3a3a;
+            gap: 4px;
+        }
+
+        .footer-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 0 6px;
+            height: 24px;
+            color: #888;
+            font-size: 10px;
+        }
+
+        .spacer {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="browser-mockup">
+        <div class="browser-bar">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+            <div class="url-bar">🔒 https://www.example.com/news/article-page</div>
+        </div>
+        <div class="page-content">
+            <div class="page-text">📰 A text-only news page (no videos here)</div>
+            <div class="popup">
+                <div class="popup-toolbar">
+                    <div class="tb">↗</div>
+                    <div class="popup-title">Video DownloadHelper</div>
+                    <div class="tb" style="opacity:0.3">⬇</div>
+                </div>
+                <div class="empty">
+                    <div class="empty-icon">🎬</div>
+                    <div class="empty-title">Waiting for media…</div>
+                    <div class="empty-desc">Start the video (and skip ads if any) to help detect the media. Or report
+                        missing media.</div>
+                    <div class="empty-btn">Force detection</div>
+                </div>
+                <div class="popup-footer">
+                    <div class="footer-btn">⚙</div>
+                    <div class="footer-btn">ℹ No video?</div>
+                    <div class="spacer"></div>
+                    <div class="footer-btn">⏱</div>
+                    <div class="footer-btn">🗑</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

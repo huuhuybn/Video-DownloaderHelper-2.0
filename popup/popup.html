@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video DownloadHelper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- ─── Top Toolbar ──────────────────────────────────────────────────── -->
+  <header class="toolbar toolbar-top">
+    <div class="toolbar-left">
+      <button id="btn-open-tab" class="toolbar-btn" title="Open in new tab">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </button>
+    </div>
+    <div class="toolbar-center">
+      <span class="toolbar-title">Video DownloadHelper</span>
+    </div>
+    <div class="toolbar-right">
+      <button id="btn-download-all" class="toolbar-btn" title="Download all" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── Media List ───────────────────────────────────────────────────── -->
+  <main class="media-list" id="media-list">
+    <!-- Dynamic content inserted by popup.js -->
+  </main>
+
+  <!-- ─── Empty State ──────────────────────────────────────────────────── -->
+  <div class="empty-state" id="empty-state">
+    <div class="empty-icon">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
+        <polygon points="23 7 16 12 23 17 23 7"/>
+        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+      </svg>
+    </div>
+    <p class="empty-title" data-i18n="waiting_for_media">Waiting for media…</p>
+    <p class="empty-desc" data-i18n="nomedia_description">Start the video (and skip ads if any) to help detect the media.</p>
+    <button class="btn-force-detect" id="btn-force-detect" data-i18n="nomedia_reload_button">Force detection</button>
+  </div>
+
+  <!-- ─── Loading State ────────────────────────────────────────────────── -->
+  <div class="loading-state" id="loading-state">
+    <div class="spinner"></div>
+    <p>Scanning…</p>
+  </div>
+
+  <!-- ─── Bottom Toolbar ───────────────────────────────────────────────── -->
+  <footer class="toolbar toolbar-bottom">
+    <button id="btn-settings" class="toolbar-btn" title="Settings">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+      </svg>
+    </button>
+    <button id="btn-no-video" class="toolbar-btn" title="No video?">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      <span class="btn-label" data-i18n="show_nomedia_button">No video?</span>
+    </button>
+    <div class="toolbar-spacer"></div>
+    <button id="btn-history" class="toolbar-btn" title="History">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    </button>
+    <button id="btn-clear" class="toolbar-btn" title="Clear all">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="3 6 5 6 21 6"/>
+        <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+      </svg>
+    </button>
+  </footer>
+
+  <!-- ─── Action Menu (overlay) ────────────────────────────────────────── -->
+  <div class="action-menu" id="action-menu" hidden>
+    <button class="action-item" data-action="download">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      <span data-i18n="download_button">Download</span>
+    </button>
+    <button class="action-item" data-action="copy-url">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+      </svg>
+      <span data-i18n="copy_url">Copy URL</span>
+    </button>
+    <button class="action-item" data-action="play">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+      <span data-i18n="play">Play</span>
+    </button>
+    <button class="action-item" data-action="details">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="16" x2="12" y2="12"/>
+        <line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
+      <span data-i18n="details">Details</span>
+    </button>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1280px;
+            height: 800px;
+            overflow: hidden;
+            background: #1a1a1a;
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .browser-mockup {
+            width: 1100px;
+            background: #2b2b2b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .browser-bar {
+            height: 36px;
+            background: #363636;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-r {
+            background: #ff5f57;
+        }
+
+        .dot-y {
+            background: #ffbd2e;
+        }
+
+        .dot-g {
+            background: #28c840;
+        }
+
+        .url-bar {
+            flex: 1;
+            height: 22px;
+            background: #1e1e1e;
+            border-radius: 4px;
+            margin-left: 12px;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            color: #888;
+            font-size: 11px;
+        }
+
+        .page-content {
+            height: 500px;
+            background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+            padding: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-text {
+            color: #555;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .popup {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            width: 400px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            border: 1px solid #333;
+        }
+
+        .popup-toolbar {
+            display: flex;
+            align-items: center;
+            padding: 6px 10px;
+            background: #252526;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .popup-title {
+            flex: 1;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tb {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 12px;
+            cursor: default;
+        }
+
+        .media-entry {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .media-entry:hover {
+            background: #2d2d2d;
+        }
+
+        .m-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .m-icon.vid {
+            background: linear-gradient(135deg, #1565c0, #42a5f5);
+        }
+
+        .m-icon.hls {
+            background: linear-gradient(135deg, #e65100, #ff9800);
+        }
+
+        .m-icon.aud {
+            background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+        }
+
+        .m-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .m-title {
+            font-size: 13px;
+            color: #e0e0e0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .m-meta {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 2px;
+        }
+
+        .m-tag {
+            font-size: 10px;
+            color: #a0a0a0;
+        }
+
+        .m-tag.res {
+            color: #4fc3f7;
+            font-weight: 600;
+        }
+
+        .m-tag.fmt {
+            background: #3a3a3a;
+            padding: 1px 5px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 9px;
+            color: #ccc;
+        }
+
+        .m-tag.type {
+            color: #ffa726;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 9px;
+        }
+
+        .sep {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #555;
+        }
+
+        .m-actions {
+            display: flex;
+            gap: 4px;
+        }
+
+        .dl-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 4px;
+            background: #66bb6a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: default;
+        }
+
+        .more-btn {
+            width: 28px;
+            height: 28px;
+            border: none;
+            border-radius: 4px;
+            background: transparent;
+            color: #888;
+            font-size: 14px;
+            cursor: default;
+        }
+
+        .popup-footer {
+            display: flex;
+            align-items: center;
+            padding: 6px 10px;
+            background: #252526;
+            border-top: 1px solid #3a3a3a;
+            gap: 4px;
+        }
+
+        .footer-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 0 6px;
+            height: 24px;
+            border: none;
+            background: transparent;
+            color: #888;
+            font-size: 10px;
+            cursor: default;
+            border-radius: 3px;
+        }
+
+        .spacer {
+            flex: 1;
+        }
+
+        .badge {
+            position: absolute;
+            top: 3px;
+            right: 22px;
+            background: #4CAF50;
+            color: #fff;
+            font-size: 9px;
+            padding: 1px 5px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="browser-mockup">
+        <div class="browser-bar">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+            <div class="url-bar">🔒 https://www.example-video-site.com/watch/amazing-video</div>
+        </div>
+        <div class="page-content">
+            <div class="page-text">▶ Video is playing on the page...</div>
+            <div class="popup">
+                <div class="popup-toolbar">
+                    <div class="tb">↗</div>
+                    <div class="popup-title">Video DownloadHelper</div>
+                    <div class="tb">⬇</div>
+                </div>
+
+                <div class="media-entry">
+                    <div class="m-icon vid">▶</div>
+                    <div class="m-info">
+                        <div class="m-title">Amazing Nature Documentary - Full HD</div>
+                        <div class="m-meta">
+                            <span class="m-tag res">1080p</span><span class="sep"></span>
+                            <span class="m-tag fmt">mp4</span><span class="sep"></span>
+                            <span class="m-tag">245.3 MB</span><span class="sep"></span>
+                            <span class="m-tag">12:34</span>
+                        </div>
+                    </div>
+                    <div class="m-actions">
+                        <div class="dl-btn">⬇</div>
+                        <div class="more-btn">⋯</div>
+                    </div>
+                </div>
+
+                <div class="media-entry">
+                    <div class="m-icon hls">▶</div>
+                    <div class="m-info">
+                        <div class="m-title">Amazing Nature Documentary - HLS Stream</div>
+                        <div class="m-meta">
+                            <span class="m-tag res">720p</span><span class="sep"></span>
+                            <span class="m-tag fmt">m3u8</span><span class="sep"></span>
+                            <span class="m-tag type">HLS</span><span class="sep"></span>
+                            <span class="m-tag">3.2 Mbps</span>
+                        </div>
+                    </div>
+                    <div class="m-actions">
+                        <div class="dl-btn">⬇</div>
+                        <div class="more-btn">⋯</div>
+                    </div>
+                </div>
+
+                <div class="media-entry">
+                    <div class="m-icon vid">▶</div>
+                    <div class="m-info">
+                        <div class="m-title">Amazing Nature Documentary - SD Version</div>
+                        <div class="m-meta">
+                            <span class="m-tag res">480p</span><span class="sep"></span>
+                            <span class="m-tag fmt">webm</span><span class="sep"></span>
+                            <span class="m-tag">98.1 MB</span>
+                        </div>
+                    </div>
+                    <div class="m-actions">
+                        <div class="dl-btn">⬇</div>
+                        <div class="more-btn">⋯</div>
+                    </div>
+                </div>
+
+                <div class="media-entry">
+                    <div class="m-icon aud">♫</div>
+                    <div class="m-info">
+                        <div class="m-title">Background Music - Nature Sounds</div>
+                        <div class="m-meta">
+                            <span class="m-tag fmt">mp3</span><span class="sep"></span>
+                            <span class="m-tag">4.8 MB</span><span class="sep"></span>
+                            <span class="m-tag">3:22</span>
+                        </div>
+                    </div>
+                    <div class="m-actions">
+                        <div class="dl-btn">⬇</div>
+                        <div class="more-btn">⋯</div>
+                    </div>
+                </div>
+
+                <div class="popup-footer">
+                    <div class="footer-btn">⚙</div>
+                    <div class="footer-btn">ℹ No video?</div>
+                    <div class="spacer"></div>
+                    <div class="footer-btn">⏱</div>
+                    <div class="footer-btn">🗑</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

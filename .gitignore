@@ -1,0 +1,14 @@
+# Original extension source (reference only)
+10.1.37.2_0/
+
+# macOS
+.DS_Store
+*.swp
+*.swo
+
+# Node
+node_modules/
+
+# Temp files
+*.tmp
+*.log

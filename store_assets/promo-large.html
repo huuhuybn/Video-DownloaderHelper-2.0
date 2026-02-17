@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 920px;
+            height: 680px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 60px;
+        }
+
+        .left {
+            flex-shrink: 0;
+        }
+
+        .circles {
+            position: relative;
+            width: 240px;
+            height: 220px;
+        }
+
+        .c {
+            border-radius: 50%;
+            position: absolute;
+            filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+        }
+
+        .c1 {
+            width: 130px;
+            height: 130px;
+            background: radial-gradient(circle at 40% 40%, #ffe066, #FFD700);
+            top: 0;
+            left: 55px;
+        }
+
+        .c2 {
+            width: 130px;
+            height: 130px;
+            background: radial-gradient(circle at 40% 40%, #ff7777, #FF4444);
+            top: 80px;
+            left: 0;
+        }
+
+        .c3 {
+            width: 130px;
+            height: 130px;
+            background: radial-gradient(circle at 40% 40%, #77aaff, #4488FF);
+            top: 80px;
+            left: 110px;
+        }
+
+        .right {
+            text-align: left;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .formats {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .fmt {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            padding: 6px 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .feat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .feat .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="left">
+            <div class="circles">
+                <div class="c c1"></div>
+                <div class="c c2"></div>
+                <div class="c c3"></div>
+            </div>
+        </div>
+        <div class="right">
+            <h1>Video<br>DownloadHelper</h1>
+            <p class="subtitle">Download Videos from Any Website</p>
+            <div class="formats">
+                <span class="fmt">HLS</span><span class="fmt">DASH</span><span class="fmt">MP4</span>
+                <span class="fmt">WebM</span><span class="fmt">MKV</span><span class="fmt">MP3</span>
+            </div>
+            <div class="features">
+                <div class="feat"><span class="dot"></span> Auto-detect video streams</div>
+                <div class="feat"><span class="dot"></span> Quality selection</div>
+                <div class="feat"><span class="dot"></span> 28 languages supported</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

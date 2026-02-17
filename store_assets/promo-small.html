@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 440px;
+            height: 280px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .circles {
+            position: relative;
+            width: 120px;
+            height: 110px;
+            margin-bottom: 20px;
+        }
+
+        .c {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0.9;
+        }
+
+        .c1 {
+            background: #FFD700;
+            top: 0;
+            left: 30px;
+        }
+
+        .c2 {
+            background: #FF4444;
+            top: 40px;
+            left: 0;
+        }
+
+        .c3 {
+            background: #4488FF;
+            top: 40px;
+            left: 60px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            margin-top: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circles">
+        <div class="c c1"></div>
+        <div class="c c2"></div>
+        <div class="c c3"></div>
+    </div>
+    <h1>Video DownloadHelper</h1>
+    <p>Download Videos from the Web</p>
+</body>
+
+</html>

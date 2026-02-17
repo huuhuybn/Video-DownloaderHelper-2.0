@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1400px;
+            height: 560px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 40%, #302b63 70%, #24243e 100%);
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0 100px;
+            gap: 80px;
+        }
+
+        .circles {
+            position: relative;
+            width: 280px;
+            height: 260px;
+            flex-shrink: 0;
+        }
+
+        .c {
+            border-radius: 50%;
+            position: absolute;
+            filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.4));
+        }
+
+        .c1 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at 35% 35%, #ffe066, #FFD700, #e6b800);
+            top: 0;
+            left: 65px;
+        }
+
+        .c2 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at 35% 35%, #ff7777, #FF4444, #cc0000);
+            top: 95px;
+            left: 0;
+        }
+
+        .c3 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at 35% 35%, #77bbff, #4488FF, #0055cc);
+            top: 95px;
+            left: 130px;
+        }
+
+        .center {
+            flex: 1;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 18px;
+            margin-top: 14px;
+            margin-bottom: 28px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 12px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 8px 18px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+        }
+
+        .right-features {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 12px 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .fi-detect {
+            background: linear-gradient(135deg, #42a5f5, #1976d2);
+        }
+
+        .fi-quality {
+            background: linear-gradient(135deg, #66bb6a, #388e3c);
+        }
+
+        .fi-lang {
+            background: linear-gradient(135deg, #ffa726, #f57c00);
+        }
+
+        .feature-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+        }
+
+        .feature-title {
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="circles">
+            <div class="c c1"></div>
+            <div class="c c2"></div>
+            <div class="c c3"></div>
+        </div>
+        <div class="center">
+            <h1>Video<br>DownloadHelper</h1>
+            <p class="subtitle">Download Videos from Any Website</p>
+            <div class="badges">
+                <span class="badge">HLS</span><span class="badge">DASH</span><span class="badge">MP4</span>
+                <span class="badge">WebM</span><span class="badge">MKV</span><span class="badge">AAC</span>
+            </div>
+        </div>
+        <div class="right-features">
+            <div class="feature">
+                <div class="feature-icon fi-detect">▶</div>
+                <div>
+                    <div class="feature-title">Auto Detection</div>
+                    <div class="feature-text">Detects video streams automatically</div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon fi-quality">★</div>
+                <div>
+                    <div class="feature-title">Quality Selection</div>
+                    <div class="feature-text">Choose resolution & format</div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon fi-lang">🌐</div>
+                <div>
+                    <div class="feature-title">28 Languages</div>
+                    <div class="feature-text">Worldwide support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
