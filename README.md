@@ -94,7 +94,7 @@ This repo contains the public-facing assets (UI, icons, locales, store assets). 
 - ✅ Free updates for 6 months
 - ✅ Basic setup support via email
 
-[![Buy Source Code](https://img.shields.io/badge/💲_Buy_Source_Code-$50-28a745?style=for-the-badge)](https://paypal.me/huuhuybn/50)
+[![Buy Source Code](https://img.shields.io/badge/💲_Buy_Source_Code-$50-28a745?style=for-the-badge)](https://paypal.me/parduota/50)
 
 📧 Contact: **huuhuybn@gmail.com**
 
@@ -131,7 +131,7 @@ This repo contains the public-facing assets (UI, icons, locales, store assets). 
 | 📦 **File Compressor** | Browser extension for file compression |
 
 [![Hire Me](https://img.shields.io/badge/📧_Hire_Me-huuhuybn@gmail.com-blue?style=for-the-badge)](mailto:huuhuybn@gmail.com)
-[![PayPal](https://img.shields.io/badge/PayPal-huuhuybn-00457C?style=for-the-badge&logo=paypal)](https://paypal.me/huuhuybn)
+[![PayPal](https://img.shields.io/badge/PayPal-huuhuybn-00457C?style=for-the-badge&logo=paypal)](https://paypal.me/parduota)
 
 ---
 
@@ -195,7 +195,7 @@ Visit the **[Wiki](../../wiki)** for full documentation:
 
 **MiConvert** — Your all-in-one file conversion platform
 
-🌐 [miconvert.com](https://miconvert.com) · 📧 [huuhuybn@gmail.com](mailto:huuhuybn@gmail.com) · 💰 [PayPal](https://paypal.me/huuhuybn)
+🌐 [miconvert.com](https://miconvert.com) · 📧 [huuhuybn@gmail.com](mailto:huuhuybn@gmail.com) · 💰 [PayPal](https://paypal.me/parduota)
 
 ---
 
