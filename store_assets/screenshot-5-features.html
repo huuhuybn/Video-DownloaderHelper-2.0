@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1280px;
+            height: 800px;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .header h1 span {
+            color: #f1c40f;
+        }
+
+        .header p {
+            color: #a6adc8;
+            font-size: 18px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 0 100px;
+            width: 100%;
+        }
+
+        .feature {
+            background: rgba(30, 30, 46, 0.8);
+            border: 1px solid #2a2a3e;
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .feature:nth-child(1) {
+            border-color: rgba(46, 204, 113, 0.3);
+        }
+
+        .feature:nth-child(2) {
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .feature:nth-child(3) {
+            border-color: rgba(155, 89, 182, 0.3);
+        }
+
+        .feature:nth-child(4) {
+            border-color: rgba(241, 196, 15, 0.3);
+        }
+
+        .feature:nth-child(5) {
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+
+        .feature:nth-child(6) {
+            border-color: rgba(26, 188, 156, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            color: #6c7086;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .mini-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .mb-green {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+
+        .mb-blue {
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+        }
+
+        .mb-purple {
+            background: rgba(155, 89, 182, 0.2);
+            color: #9b59b6;
+        }
+
+        .mb-yellow {
+            background: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+        }
+
+        .mb-red {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+
+        .mb-teal {
+            background: rgba(26, 188, 156, 0.2);
+            color: #1abc9c;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: #6c7086;
+            font-size: 13px;
+        }
+
+        .footer-text span {
+            color: #f1c40f;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🟡🔴🔵 All <span>Features</span></h1>
+        <p>Everything you need to download videos from the web</p>
+    </div>
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">🔍</div>
+            <div class="feature-title">Smart Detection</div>
+            <div class="feature-desc">Auto-detect videos via network monitoring & DOM scanning</div>
+            <div class="badge-row">
+                <span class="mini-badge mb-green">AUTO</span>
+                <span class="mini-badge mb-green">SMART</span>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📡</div>
+            <div class="feature-title">Stream Support</div>
+            <div class="feature-desc">Record HLS & DASH live streams for offline viewing</div>
+            <div class="badge-row">
+                <span class="mini-badge mb-blue">HLS</span>
+                <span class="mini-badge mb-blue">DASH</span>
+                <span class="mini-badge mb-blue">MPD</span>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎬</div>
+            <div class="feature-title">HD Quality</div>
+            <div class="feature-desc">Download in up to 4K/8K at maximum speed</div>
+            <div class="badge-row">
+                <span class="mini-badge mb-purple">4K</span>
+                <span class="mini-badge mb-purple">1080p</span>
+                <span class="mini-badge mb-purple">720p</span>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📁</div>
+            <div class="feature-title">Multi-Format</div>
+            <div class="feature-desc">MP4, WebM, MKV, FLV, AVI, MOV and more</div>
+            <div class="badge-row">
+                <span class="mini-badge mb-yellow">MP4</span>
+                <span class="mini-badge mb-yellow">WebM</span>
+                <span class="mini-badge mb-yellow">MKV</span>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎵</div>
+            <div class="feature-title">Audio Extract</div>
+            <div class="feature-desc">Extract audio tracks from any video into MP3</div>
+            <div class="badge-row">
+                <span class="mini-badge mb-red">MP3</span>
+                <span class="mini-badge mb-red">AAC</span>
+                <span class="mini-badge mb-red">OGG</span>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🌍</div>
+            <div class="feature-title">55 Languages</div>
+            <div class="feature-desc">Localized interface for global users worldwide</div>
+            <div class="badge-row">
+                <span class="mini-badge mb-teal">EN</span>
+                <span class="mini-badge mb-teal">VI</span>
+                <span class="mini-badge mb-teal">JA</span>
+                <span class="mini-badge mb-teal">+52</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-text">⚡ Powered by <span>MiConvert.com</span></div>
+    </div>
+</body>
+
+</html>

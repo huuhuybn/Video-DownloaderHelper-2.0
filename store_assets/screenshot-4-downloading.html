@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1280px;
+            height: 800px;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 0 80px;
+        }
+
+        .popup {
+            width: 360px;
+            background: #1e1e2e;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            border-bottom: 1px solid #2a2a3e;
+        }
+
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.y {
+            background: #f1c40f;
+        }
+
+        .dot.r {
+            background: #e74c3c;
+        }
+
+        .dot.b {
+            background: #3498db;
+        }
+
+        .toolbar-title {
+            color: #cdd6f4;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .toolbar-right {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tb-btn {
+            color: #6c7086;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .media-list {
+            padding: 8px;
+        }
+
+        .media-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: 10px;
+            margin-bottom: 4px;
+            position: relative;
+            background: #181825;
+        }
+
+        .media-icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .media-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .media-title {
+            color: #cdd6f4;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .media-meta {
+            display: flex;
+            gap: 6px;
+            margin-top: 4px;
+            align-items: center;
+        }
+
+        .badge {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .badge-mp4 {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+
+        .badge-hls {
+            background: rgba(155, 89, 182, 0.2);
+            color: #9b59b6;
+        }
+
+        .meta-text {
+            color: #6c7086;
+            font-size: 10px;
+        }
+
+        /* Progress bar for downloading items */
+        .progress-container {
+            margin-top: 6px;
+        }
+
+        .progress-bar {
+            height: 3px;
+            background: #2a2a3e;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 2px;
+        }
+
+        .progress-fill.green {
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+        }
+
+        .progress-fill.blue {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        .progress-fill.purple {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3px;
+        }
+
+        .progress-pct {
+            color: #2ecc71;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .progress-speed {
+            color: #6c7086;
+            font-size: 10px;
+        }
+
+        .dl-icon {
+            color: #2ecc71;
+            font-size: 16px;
+            margin-left: 8px;
+        }
+
+        .check-icon {
+            color: #2ecc71;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+
+        .bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            border-top: 1px solid #2a2a3e;
+        }
+
+        .bottom-text {
+            color: #6c7086;
+            font-size: 11px;
+        }
+
+        .info-panel {
+            max-width: 500px;
+        }
+
+        .info-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .info-title span {
+            color: #2ecc71;
+        }
+
+        .info-desc {
+            color: #a6adc8;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .info-stats {
+            display: flex;
+            gap: 24px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            color: #2ecc71;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            color: #6c7086;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="popup">
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <div class="dots"><span class="dot y"></span><span class="dot r"></span><span class="dot b"></span>
+                    </div>
+                    <span class="toolbar-title">Video DownloadHelper</span>
+                </div>
+                <div class="toolbar-right">
+                    <span class="tb-btn">⚙️</span>
+                </div>
+            </div>
+            <div class="media-list">
+                <div class="media-item">
+                    <span class="media-icon">🎬</span>
+                    <div class="media-info">
+                        <div class="media-title">Amazing Nature Documentary 4K</div>
+                        <div class="media-meta">
+                            <span class="badge badge-mp4">MP4</span>
+                            <span class="meta-text">1080p • 856 MB</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill green" style="width:100%"></div>
+                            </div>
+                            <div class="progress-text"><span class="progress-pct">✅ Complete</span><span
+                                    class="progress-speed">856 MB</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <span class="media-icon">🎵</span>
+                    <div class="media-info">
+                        <div class="media-title">Best Lo-Fi Beats Collection 2026</div>
+                        <div class="media-meta">
+                            <span class="badge" style="background:rgba(52,152,219,0.2);color:#3498db">MP3</span>
+                            <span class="meta-text">320kbps • 12.4 MB</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill blue" style="width:73%"></div>
+                            </div>
+                            <div class="progress-text"><span class="progress-pct" style="color:#3498db">73%</span><span
+                                    class="progress-speed">2.1 MB/s</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <span class="media-icon">📡</span>
+                    <div class="media-info">
+                        <div class="media-title">Live Sports Stream — Champions Final</div>
+                        <div class="media-meta">
+                            <span class="badge badge-hls">HLS</span>
+                            <span class="meta-text">720p • Recording...</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill purple" style="width:45%"></div>
+                            </div>
+                            <div class="progress-text"><span class="progress-pct" style="color:#9b59b6">● REC
+                                    12:34</span><span class="progress-speed">1.8 MB/s</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <span class="bottom-text">3 items • 1 downloading</span>
+                <span class="bottom-text">⚡ Premium</span>
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="info-title">Download<br>in <span>Progress</span></div>
+            <div class="info-desc">Monitor all your downloads in real-time. Track progress, speed, and status — all from
+                the popup window.</div>
+            <div class="info-stats">
+                <div class="stat">
+                    <div class="stat-num">4K</div>
+                    <div class="stat-label">Max Quality</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">5x</div>
+                    <div class="stat-label">Parallel DL</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">∞</div>
+                    <div class="stat-label">No Limits</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
