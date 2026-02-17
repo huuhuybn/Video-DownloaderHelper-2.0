@@ -6,7 +6,7 @@
 
 ### The easiest way to download videos from any website
 
-[![Install on Chrome](https://img.shields.io/badge/Chrome-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#)
+[![Install on Chrome](https://img.shields.io/badge/Chrome-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/video-downloadhelper/dolmpocanhjilmaknapfakfpdpnoffno)
 [![Install on Firefox](https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](#)
 [![Install on Edge](https://img.shields.io/badge/Edge-Install-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white)](#)
 

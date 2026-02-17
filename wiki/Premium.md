@@ -39,7 +39,7 @@
 
 </div>
 
-[![Buy with PayPal — $20](https://img.shields.io/badge/Buy_with_PayPal-$20-blue?style=for-the-badge&logo=paypal)](https://paypal.me/huuhuybn/20)
+[![Buy with PayPal — $20](https://img.shields.io/badge/Buy_with_PayPal-$20-blue?style=for-the-badge&logo=paypal)](https://paypal.me/parduota/20)
 
 ### What's included:
 - ✅ Lifetime access — never pay again
@@ -63,7 +63,7 @@
 
 | Method | |
 |--------|:-:|
-| 🏦 PayPal | ✅ [Pay here](https://paypal.me/huuhuybn/20) |
+| 🏦 PayPal | ✅ [Pay here](https://paypal.me/parduota/20) |
 
 ---
 

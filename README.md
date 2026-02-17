@@ -4,7 +4,7 @@
 
 ### Download any video from any website — fast, easy, and reliable.
 
-[![Chrome](https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#)
+[![Chrome](https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/video-downloadhelper/dolmpocanhjilmaknapfakfpdpnoffno)
 [![Firefox](https://img.shields.io/badge/Firefox-Add--on-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](#)
 [![Edge](https://img.shields.io/badge/Edge-Extension-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white)](#)
 
