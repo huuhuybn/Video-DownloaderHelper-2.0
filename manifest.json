@@ -3,9 +3,9 @@
   "name": "__MSG_extName__",
   "version": "1.0.0",
   "description": "__MSG_extDescription__",
+  "homepage_url": "https://miconvert.com",
   "default_locale": "en",
   "author": "MiConvert Team",
-
   "permissions": [
     "tabs",
     "downloads",
@@ -17,14 +17,13 @@
     "activeTab",
     "scripting"
   ],
-
-  "host_permissions": ["<all_urls>"],
-
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "background": {
     "service_worker": "background.js",
     "type": "module"
   },
-
   "action": {
     "default_icon": {
       "16": "icons/icon-16.png",
@@ -35,23 +34,24 @@
     "default_title": "Video DownloadHelper",
     "default_popup": "popup/popup.html"
   },
-
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
   },
-
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_end",
       "all_frames": true
     }
   ],
-
   "commands": {
     "_execute_action": {
       "suggested_key": {
@@ -60,7 +60,6 @@
       }
     }
   },
-
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   }
