@@ -14,7 +14,7 @@
 
 ---
 
-⚡ **Powered by [MiConvert.com](https://miconvert.com)**
+⚡ **Powered by [MiConvert.com](https://miconvert.com?utm_source=chrome&utm_medium=readme&utm_campaign=chrome-video-downloader-helper)**
 
 </div>
 
@@ -126,7 +126,7 @@ This repo contains the public-facing assets (UI, icons, locales, store assets). 
 | Project | Description |
 |---------|-------------|
 | 🎬 **Video DownloadHelper 2.0** | Video downloader extension (this project) |
-| 🔄 **[MiConvert](https://miconvert.com)** | File converter platform — web + extension |
+| 🔄 **[MiConvert](https://miconvert.com?utm_source=chrome&utm_medium=readme&utm_campaign=chrome-video-downloader-helper)** | File converter platform — web + extension |
 | 🖼️ **MiConvert Image Tools** | Image conversion & optimization VS Code extension |
 | 📦 **File Compressor** | Browser extension for file compression |
 
@@ -191,11 +191,11 @@ Visit the **[Wiki](../../wiki)** for full documentation:
 
 <div align="center">
 
-## ⚡ Powered by [MiConvert.com](https://miconvert.com)
+## ⚡ Powered by [MiConvert.com](https://miconvert.com?utm_source=chrome&utm_medium=readme&utm_campaign=chrome-video-downloader-helper)
 
 **MiConvert** — Your all-in-one file conversion platform
 
-🌐 [miconvert.com](https://miconvert.com) · 📧 [huuhuybn@gmail.com](mailto:huuhuybn@gmail.com) · 💰 [PayPal](https://paypal.me/parduota)
+🌐 [miconvert.com](https://miconvert.com?utm_source=chrome&utm_medium=readme&utm_campaign=chrome-video-downloader-helper) · 📧 [huuhuybn@gmail.com](mailto:huuhuybn@gmail.com) · 💰 [PayPal](https://paypal.me/parduota)
 
 ---
 
